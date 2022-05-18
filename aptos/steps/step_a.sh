@@ -22,4 +22,4 @@ cd ~/aptos-core
 ./scripts/dev_setup.sh 
 sleep 2
 
-echo "\e[1m\e[32m===接下来在终端执行 source 代码=== \e[0m" && sleep 1
+echo "\e[1m\e[32m===接下来在终端执行 STEP 4-b. source 代码=== \e[0m" && sleep 1

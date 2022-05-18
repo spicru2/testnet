@@ -10,7 +10,7 @@ echo "#   ╚═════╝╚═╝  ╚═╝ ╚═════╝ ╚═
 echo "================================================================================"
 sleep 2
 
-echo "\e[1m\e[32m===确保已经执行 source 代码=== \e[0m" && sleep 1
+echo "\e[1m\e[32m===确保已经执行 STEP 4-b. source 代码=== \e[0m" && sleep 1
 echo "\e[1m\e[32m2.1. 切换testnet分支... \e[0m" && sleep 1
 cd ~/aptos-core
 git checkout --track origin/testnet
