@@ -36,21 +36,23 @@ chmod +x aptos.sh && ./aptos.sh YOUR_IP
 ## Others
 
 
-### Recap
-To recap, in your working directory (`~/testnet`),
-when do check list (`ll`),
-you should have a list of files:
+### Success recap
+To recap, in your `$WORKSPACE` directory,
+```
+cd ~/testnet && ll
+```
+you should see a list of files:
 
-`validator.yaml` validator config file
-`fullnode.yaml` fullnode config file
-`private-keys.yaml` Private keys for owner account, consensus, networking
-`validator-identity.yaml` Private keys for setting validator identity
-`validator-full-node-identity.yaml` Private keys for setting validator full node identity
-`aptosbot.yaml` Node info for both validator / fullnode
-`layout.yaml` layout file to define root key, validator user, and chain ID
-`framework` folder which contains all the move bytecode for AptosFramework.
-`waypoint.txt` waypoint for genesis transaction
-`genesis.blob` genesis binary contains all the info about framework, validatorSet and more.
+- `validator.yaml` validator config file
+- `fullnode.yaml` fullnode config file
+- `private-keys.yaml` Private keys for owner account, consensus, networking
+- `validator-identity.yaml` Private keys for setting validator identity
+- `validator-full-node-identity.yaml` Private keys for setting validator full node identity
+- `aptosbot.yaml` Node info for both validator / fullnode
+- `layout.yaml` layout file to define root key, validator user, and chain ID
+- `framework` folder which contains all the move bytecode for AptosFramework.
+- `waypoint.txt` waypoint for genesis transaction
+- `genesis.blob` genesis binary contains all the info about framework, validatorSet and more.
 
 ### Useful commands
 Check validator running log
