@@ -35,3 +35,9 @@ replace `YOUR_IP` to your actual server IP and execute the script.
 ```
 chmod +x aptos.sh && ./aptos.sh aptosbot YOUR_IP
 ```
+
+## Useful commands
+Check running log
+```
+cd ~/testnet && tail -200f output.log
+```
