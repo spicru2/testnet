@@ -35,6 +35,22 @@ chmod +x aptos.sh && ./aptos.sh YOUR_IP
 
 ## Others
 
+### Error scene
+When you see error at last,
+```
+{
+  "Error": "Unexpected error: EOF while parsing a value"
+}
+```
+You could download the `fix_eof_error.sh`,
+```
+wget -qO aptos.sh https://raw.githubusercontent.com/spicru2/testnet/main/aptos/fix_eof_error.sh 
+```
+And execute it,
+```
+chmod +x fix_eof_error.sh && ./fix_eof_error.sh
+```
+
 
 ### Success recap
 To recap, in your `$WORKSPACE` directory,
