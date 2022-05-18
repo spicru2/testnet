@@ -28,6 +28,7 @@ wget -qO step_c.sh https://raw.githubusercontent.com/spicru2/testnet/main/aptos/
 ```
 #### STEP 4-a
 Setup the dev environment.
+You may need to type `y` or `yes` to continue.
 ```
 chmod +x step_a.sh && ./step_a.sh
 ```
@@ -40,6 +41,7 @@ source ~/.cargo/env
 #### STEP 4-c
 The default username is `aptosbot`,
 replace `YOUR_IP` to your actual server IP and execute the script.
+You may need to type `y` or `yes` to continue.
 ```
 chmod +x step_c.sh && ./step_c.sh YOUR_IP
 ```
