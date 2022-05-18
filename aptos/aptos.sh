@@ -10,14 +10,14 @@ echo "#   ╚═════╝╚═╝  ╚═╝ ╚═════╝ ╚═
 echo "================================================================================"
 sleep 2
 
-source $HOME/.bash_profile
-source $HOME/.profile
-
 echo "\e[1m\e[32m1. 安装依赖，准备环境... \e[0m" && sleep 1
 sudo apt install git
 git clone https://github.com/aptos-labs/aptos-core.git
 cd ~/aptos-core
-./scripts/dev_setup.sh
+./scripts/dev_setup.sh 
+sleep 2
+source $HOME/.bash_profile
+source $HOME/.profile
 source ~/.cargo/env
 git checkout --track origin/testnet
 
