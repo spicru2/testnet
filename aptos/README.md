@@ -1,9 +1,5 @@
 # Aptos validator setup for Testnet
-Official documents:
-> [Run a validator node](https://aptos.dev/tutorials/validator-node/intro)
-Usefull tools:
-> To find latest block height use [Aptos Network Dashboard](https://status.devnet.aptos.dev/)\
-> To check your node health status try [Aptos Node Informer](http://node-tools.net/aptos/tester/)
+
 ## Hardware requirements:
 #### For running an aptos node on incentivized testnet we recommend the following:
 - CPU: 4 cores (Intel Xeon Skylake or newer)
@@ -36,8 +32,17 @@ replace `YOUR_IP` to your actual server IP and execute the script.
 chmod +x aptos.sh && ./aptos.sh aptosbot YOUR_IP
 ```
 
-## Useful commands
-Check running log
+## Others
+
+### Useful commands
+Check validator running log
 ```
 cd ~/testnet && tail -200f output.log
 ```
+
+### Useful links:
+- [Run a validator node](https://aptos.dev/tutorials/validator-node/intro)
+- [Aptos Network Dashboard](https://status.devnet.aptos.dev/)
+- [Aptos Node Checker](http://node-tools.net/aptos/tester/)
+- [Testnet Intro](https://medium.com/aptoslabs/aptos-incentivized-testnet-update-abcfcd94d54c) 
+- [AIT1 Intro](https://medium.com/aptoslabs/launch-of-aptos-incentivized-testnet-registration-2e85696a62d0)
