@@ -57,8 +57,8 @@ users:
   - aptosbot
 chain_id: 23
 ' >> ./layout.yaml
-cd ~/aptos-core
 
+cd ~/aptos-core
 cargo run --release --package framework -- --package aptos-framework --output current
 mkdir ~/$WORKSPACE/framework
 cd ~/aptos-core
