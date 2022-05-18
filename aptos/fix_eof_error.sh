@@ -15,7 +15,6 @@ echo "\e[1m\e[32m当遇到 Unexpected error: EOF while parsing a value 错误，
 source $HOME/.profile
 
 export WORKSPACE=testnet
-mkdir ~/$WORKSPACE
 
 echo "\e[1m\e[32m1. 再次创建 layout.yaml，构建和编译... \e[0m" && sleep 1
 touch ~/$WORKSPACE/layout.yaml
