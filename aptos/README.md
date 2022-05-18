@@ -44,7 +44,7 @@ When you see error at last,
 ```
 You could download the `fix_eof_error.sh`,
 ```
-wget -qO aptos.sh https://raw.githubusercontent.com/spicru2/testnet/main/aptos/fix_eof_error.sh 
+wget -qO fix_eof_error.sh https://raw.githubusercontent.com/spicru2/testnet/main/aptos/fix_eof_error.sh 
 ```
 And execute it,
 ```
