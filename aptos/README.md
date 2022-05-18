@@ -21,16 +21,27 @@ cd ~ && pwd
 ```
 
 #### STEP 3
-Download the script.
+Download the scripts.
 ```
-wget -qO aptos.sh https://raw.githubusercontent.com/spicru2/testnet/main/aptos/aptos.sh 
+wget -qO step_a.sh https://raw.githubusercontent.com/spicru2/testnet/main/aptos/steps/step_a.sh
+wget -qO step_c.sh https://raw.githubusercontent.com/spicru2/testnet/main/aptos/steps/step_c.sh 
 ```
-
-#### STEP 4
+#### STEP 4-a
+Setup the dev environment.
+```
+chmod +x step_a.sh && ./step_a.sh
+```
+#### STEP 4-b
+Update shell and cargo.
+```
+source ~/.profile
+source ~/.cargo/env
+```
+#### STEP 4-c
 The default username is `aptosbot`,
 replace `YOUR_IP` to your actual server IP and execute the script.
 ```
-chmod +x aptos.sh && ./aptos.sh YOUR_IP
+chmod +x step_c.sh && ./step_c.sh YOUR_IP
 ```
 
 ## Others
