@@ -10,6 +10,9 @@ echo "#   ╚═════╝╚═╝  ╚═╝ ╚═════╝ ╚═
 echo "================================================================================"
 sleep 2
 
+source $HOME/.bash_profile
+source $HOME/.profile
+
 echo "\e[1m\e[32m1. 安装依赖，准备环境... \e[0m" && sleep 1
 sudo apt install git
 git clone https://github.com/aptos-labs/aptos-core.git
@@ -54,12 +57,12 @@ users:
   - '${1}'
 chain_id: 23
 ' >> ./layout.yaml
+cd ~/aptos-core
 cargo run --release --package framework -- --package aptos-framework --output current
 
 mkdir ~/$WORKSPACE/framework
-
-mv aptos-framework/releases/artifacts/current/build/**/bytecode_modules/*.mv ~/$WORKSPACE/framework/
-
+mv ~/aptos-core/aptos-move/framework/aptos-framework/releases/artifacts/current/build/**/bytecode_modules/*.mv ~/$WORKSPACE/framework/
+cd ~/aptos-core
 cargo run --release -p aptos -- genesis generate-genesis --local-repository-dir ~/$WORKSPACE --output-dir ~/$WORKSPACE
 
 echo "\e[1m\e[32m5. 创建 validator.yaml，构建和编译... \e[0m" && sleep 1
@@ -111,4 +114,5 @@ api:
 ' >> ~/$WORKSPACE/validator.yaml
 
 echo "\e[1m\e[32m6. 启动本地验证器，即将全部完成... \e[0m" && sleep 1
+cd ~/aptos-core
 nohup cargo run -p aptos-node --release -- -f ~/$WORKSPACE/validator.yaml  >> ~/$WORKSPACE/output.log 2>&1 &
