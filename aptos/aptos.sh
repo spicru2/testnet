@@ -1,18 +1,16 @@
 #!/bin/sh
 
-echo "=================================================="
-echo -e "\033[0;35m"
+echo "================================================================================"
 echo "#   ██████╗██████╗ ██╗   ██╗███████╗██╗  ██╗███████╗   ███████╗████████╗██╗  ██╗";
 echo "#  ██╔════╝██╔══██╗██║   ██║╚══███╔╝██║  ██║██╔════╝   ██╔════╝╚══██╔══╝██║  ██║";
 echo "#  ██║     ██████╔╝██║   ██║  ███╔╝ ███████║█████╗     █████╗     ██║   ███████║";
 echo "#  ██║     ██╔══██╗██║   ██║ ███╔╝  ██╔══██║██╔══╝     ██╔══╝     ██║   ██╔══██║";
 echo "#  ╚██████╗██║  ██║╚██████╔╝███████╗██║  ██║███████╗██╗███████╗   ██║   ██║  ██║";
 echo "#   ╚═════╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝╚══════╝╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═╝";
-echo -e "\e[0m"
-echo "=================================================="
+echo "================================================================================"
 sleep 3
 
-echo -e "\e[1m\e[32m1. 安装依赖，准备环境... \e[0m" && sleep 1
+echo "\e[1m\e[32m1. 安装依赖，准备环境... \e[0m" && sleep 1
 sudo apt install git
 git clone https://github.com/aptos-labs/aptos-core.git
 cd ~/aptos-core
@@ -20,7 +18,7 @@ cd ~/aptos-core
 source ~/.cargo/env
 git checkout --track origin/testnet
 
-echo -e "\e[1m\e[32m2. 配置网络端口... \e[0m" && sleep 1
+echo "\e[1m\e[32m2. 配置网络端口... \e[0m" && sleep 1
 sudo apt-get update
 sudo apt-get install iptables
 sudo iptables -I INPUT -p tcp --dport 8080 -j ACCEPT
@@ -35,7 +33,7 @@ sudo apt-get install iptables-persistent
 sudo netfilter-persistent save
 sudo netfilter-persistent reload
 
-echo -e "\e[1m\e[32m3. 创建目录，生成密钥对... \e[0m" && sleep 1
+echo "\e[1m\e[32m3. 创建目录，生成密钥对... \e[0m" && sleep 1
 export WORKSPACE=testnet
 mkdir ~/$WORKSPACE
 cd ~/aptos-core
@@ -46,7 +44,7 @@ cargo run -p aptos -- genesis set-validator-configuration \
  --validator-host $2:6180 \
  --full-node-host $2:6182
 
-echo -e "\e[1m\e[32m4. 创建 layout.yaml，构建和编译... \e[0m" && sleep 1
+echo "\e[1m\e[32m4. 创建 layout.yaml，构建和编译... \e[0m" && sleep 1
 touch ~/$WORKSPACE/layout.yaml
 
 echo '
@@ -64,7 +62,7 @@ mv aptos-framework/releases/artifacts/current/build/**/bytecode_modules/*.mv ~/$
 
 cargo run --release -p aptos -- genesis generate-genesis --local-repository-dir ~/$WORKSPACE --output-dir ~/$WORKSPACE
 
-echo -e "\e[1m\e[32m5. 创建 validator.yaml，构建和编译... \e[0m" && sleep 1
+echo "\e[1m\e[32m5. 创建 validator.yaml，构建和编译... \e[0m" && sleep 1
 
 echo '
 base:
@@ -112,5 +110,5 @@ api:
   address: "0.0.0.0:8080"
 ' >> ~/$WORKSPACE/validator.yaml
 
-echo -e "\e[1m\e[32m5. 启动本地验证器，即将全部完成... \e[0m" && sleep 1
+echo "\e[1m\e[32m6. 启动本地验证器，即将全部完成... \e[0m" && sleep 1
 nohup cargo run -p aptos-node --release -- -f ~/$WORKSPACE/validator.yaml  >> ~/$WORKSPACE/output.log 2>&1 &
