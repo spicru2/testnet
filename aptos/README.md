@@ -23,8 +23,7 @@ cd ~ && pwd
 #### STEP 3
 Download the scripts.
 ```
-wget -qO step_a.sh https://raw.githubusercontent.com/spicru2/testnet/main/aptos/steps/step_a.sh
-wget -qO step_c.sh https://raw.githubusercontent.com/spicru2/testnet/main/aptos/steps/step_c.sh 
+wget -qO step_a.sh https://raw.githubusercontent.com/spicru2/testnet/main/aptos/steps/step_a.sh && wget -qO step_c.sh https://raw.githubusercontent.com/spicru2/testnet/main/aptos/steps/step_c.sh 
 ```
 #### STEP 4-a
 Setup the dev environment.
