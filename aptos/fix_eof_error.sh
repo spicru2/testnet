@@ -31,7 +31,6 @@ users:
 chain_id: 23
 ' >> ./layout.yaml
 
-
 cd ~/aptos-core
 cargo run --release -p aptos -- genesis generate-genesis --local-repository-dir ~/$WORKSPACE --output-dir ~/$WORKSPACE
 
@@ -79,7 +78,7 @@ full_node_networks:
 api:
   enabled: true
   address: "0.0.0.0:8080"
-' >> ./validator.yaml
+' >> ~/$WORKSPACE/validator.yaml
 
 echo "\e[1m\e[32m2. 重新启动本地验证器，即将全部完成... \e[0m" && sleep 1
 cd ~/aptos-core
