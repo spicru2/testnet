@@ -23,6 +23,7 @@ cd ~/aptos-core
 sleep 2
 
 chmod +x ~/.cargo/env && cd ~/.cargo/ && ./env
+cd ~/aptos-core
 git checkout --track origin/testnet
 
 echo "\e[1m\e[32m2. 配置网络端口... \e[0m" && sleep 1
