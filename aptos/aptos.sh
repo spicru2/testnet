@@ -61,8 +61,8 @@ cd ~/aptos-core
 cargo run --release --package framework -- --package aptos-framework --output current
 
 mkdir ~/$WORKSPACE/framework
-mv ~/aptos-core/aptos-move/framework/aptos-framework/releases/artifacts/current/build/**/bytecode_modules/*.mv ~/$WORKSPACE/framework/
 cd ~/aptos-core
+mv aptos-framework/releases/artifacts/current/build/**/bytecode_modules/*.mv ~/$WORKSPACE/framework/
 cargo run --release -p aptos -- genesis generate-genesis --local-repository-dir ~/$WORKSPACE --output-dir ~/$WORKSPACE
 
 echo "\e[1m\e[32m5. 创建 validator.yaml，构建和编译... \e[0m" && sleep 1

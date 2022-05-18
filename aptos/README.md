@@ -12,7 +12,7 @@ Usefull tools:
 
 ## Set up your aptos validator
 ### Automatic Script
-Use script below for a quick installation
+Use script below for a quick installation, replace `YOUR_IP` to your server IP.
 ```
-wget -qO aptos.sh https://raw.githubusercontent.com/spicru2/testnet/main/aptos/aptos.sh && chmod +x aptos.sh && ./aptos.sh
+wget -qO aptos.sh https://raw.githubusercontent.com/spicru2/testnet/main/aptos/aptos.sh && chmod +x aptos.sh && ./aptos.sh aptosbot YOUR_IP 
 ```
