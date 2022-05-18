@@ -10,9 +10,28 @@ Usefull tools:
 - Memory: 8GiB RAM
 - Disk: 300 GB
 
-## Set up your aptos validator
-### Automatic Script
-Use script below for a quick installation, replace `YOUR_IP` to your server IP.
+## Set up your aptos validator with automatic script in 4 steps
+
+#### STEP 1
+Login to your server within SSH, switch to `root` user.
 ```
-wget -qO aptos.sh https://raw.githubusercontent.com/spicru2/testnet/main/aptos/aptos.sh && chmod +x aptos.sh && ./aptos.sh aptosbot YOUR_IP 
+sudo su root
+```
+
+#### STEP 2
+Go to `/root` directory.
+```
+cd ~ && pwd
+```
+
+#### STEP 3
+Download the script.
+```
+wget -qO aptos.sh https://raw.githubusercontent.com/spicru2/testnet/main/aptos/aptos.sh 
+```
+
+#### STEP 4
+replace `YOUR_IP` to your actual server IP and execute the script.
+```
+chmod +x aptos.sh && ./aptos.sh aptosbot YOUR_IP
 ```
