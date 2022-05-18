@@ -10,6 +10,11 @@ echo "#   ╚═════╝╚═╝  ╚═╝ ╚═════╝ ╚═
 echo "================================================================================"
 sleep 2
 
+echo "\e[1m\e[32m0. 删除冗余文件... \e[0m" && sleep 1
+rm -rf .cargo
+rm -rf aptos-core
+rm -rf testnet
+
 echo "\e[1m\e[32m1. 安装依赖，准备环境... \e[0m" && sleep 1
 sudo apt install git
 git clone https://github.com/aptos-labs/aptos-core.git
