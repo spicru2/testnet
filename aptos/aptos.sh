@@ -21,9 +21,8 @@ git clone https://github.com/aptos-labs/aptos-core.git
 cd ~/aptos-core
 ./scripts/dev_setup.sh 
 sleep 2
-source $HOME/.bash_profile
-source $HOME/.profile
-source ~/.cargo/env
+
+chmod +x ~/.cargo/env && cd ~/.cargo/ && ./env
 git checkout --track origin/testnet
 
 echo "\e[1m\e[32m2. 配置网络端口... \e[0m" && sleep 1
