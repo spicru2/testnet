@@ -43,9 +43,9 @@ cd ~/aptos-core
 cargo run --release -p aptos -- genesis generate-keys --output-dir ~/$WORKSPACE
 cargo run -p aptos -- genesis set-validator-configuration \
  --keys-dir ~/$WORKSPACE --local-repository-dir ~/$WORKSPACE \
- --username $1 \
- --validator-host $2:6180 \
- --full-node-host $2:6182
+ --username aptosbot \
+ --validator-host $1:6180 \
+ --full-node-host $1:6182
 
 echo "\e[1m\e[32m4. 创建 layout.yaml，构建和编译... \e[0m" && sleep 1
 touch ~/$WORKSPACE/layout.yaml
@@ -54,15 +54,16 @@ echo '
 ---
 root_key: "0x5243ca72b0766d9e9cbf2debf6153443b01a1e0e6d086c7ea206eaf6f8043956"
 users:
-  - '${1}'
+  - aptosbot
 chain_id: 23
 ' >> ./layout.yaml
 cd ~/aptos-core
-cargo run --release --package framework -- --package aptos-framework --output current
 
+cargo run --release --package framework -- --package aptos-framework --output current
 mkdir ~/$WORKSPACE/framework
 cd ~/aptos-core
 mv aptos-framework/releases/artifacts/current/build/**/bytecode_modules/*.mv ~/$WORKSPACE/framework/
+
 cargo run --release -p aptos -- genesis generate-genesis --local-repository-dir ~/$WORKSPACE --output-dir ~/$WORKSPACE
 
 echo "\e[1m\e[32m5. 创建 validator.yaml，构建和编译... \e[0m" && sleep 1

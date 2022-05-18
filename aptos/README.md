@@ -27,12 +27,30 @@ wget -qO aptos.sh https://raw.githubusercontent.com/spicru2/testnet/main/aptos/a
 ```
 
 #### STEP 4
+The default username is `aptosbot`,
 replace `YOUR_IP` to your actual server IP and execute the script.
 ```
-chmod +x aptos.sh && ./aptos.sh aptosbot YOUR_IP
+chmod +x aptos.sh && ./aptos.sh YOUR_IP
 ```
 
 ## Others
+
+
+### Recap
+To recap, in your working directory (`~/testnet`),
+when do check list (`ll`),
+you should have a list of files:
+
+`validator.yaml` validator config file
+`fullnode.yaml` fullnode config file
+`private-keys.yaml` Private keys for owner account, consensus, networking
+`validator-identity.yaml` Private keys for setting validator identity
+`validator-full-node-identity.yaml` Private keys for setting validator full node identity
+`aptosbot.yaml` Node info for both validator / fullnode
+`layout.yaml` layout file to define root key, validator user, and chain ID
+`framework` folder which contains all the move bytecode for AptosFramework.
+`waypoint.txt` waypoint for genesis transaction
+`genesis.blob` genesis binary contains all the info about framework, validatorSet and more.
 
 ### Useful commands
 Check validator running log
