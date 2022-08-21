@@ -62,7 +62,7 @@ echo && echo -e " ${Red_font_prefix}Sui 一键安装脚本${Font_color_suffix} b
  ${Green_font_prefix} 2.安装 Sui ${Font_color_suffix}
  ${Green_font_prefix} 3.读取 Sui ${Font_color_suffix}
  ———————————————————————" && echo
-read -e -p " 请输入数字 [1-3]:" num
+read -e -p " 请输入数字 [0-3]:" num
 case "$num" in
 0)
     update_genesis
