@@ -42,22 +42,22 @@ curl --location --request POST 'http://127.0.0.1:9000/' \
 }
 
 update_genesis(){
-echo "\e[1m\e[32m1. 进入 devnet 路径... \e[0m"
+echo "${Green_font_prefix} 1. 进入 devnet 路径... ${Font_color_suffix}"
 sudo cd ~/sui-node/devnet
-echo "\e[1m\e[32m2. 关闭 docker 容器... \e[0m"
+echo "${Green_font_prefix} 2. 关闭 docker 容器... ${Font_color_suffix}"
 sudo docker-compose down --volumes 
-echo "\e[1m\e[32m3. 更新 genesis 文件... \e[0m"
+echo "${Green_font_prefix} 3. 更新 genesis 文件... ${Font_color_suffix}"
 sudo wget -O genesis.blob https://github.com/MystenLabs/sui-genesis/raw/main/devnet/genesis.blob
-echo "\e[1m\e[32m4. 重启 docker 容器... \e[0m"
+echo "${Green_font_prefix} 4. 重启 docker 容器... ${Font_color_suffix}"
 sudo docker-compose pull && sudo docker-compose up -d
-echo "\e[1m\e[32m5. 查看 sui 状态... \e[0m"
+echo "${Green_font_prefix} 5. 查看 sui 状态... ${Font_color_suffix}"
 read_sui
 }
 
-echo && echo -e " ${Red_font_prefix}Sui 一键安装脚本${Font_color_suffix} by \033[1;35mCruz\033[0m
+echo && echo -e "${Red_font_prefix}Sui 一键安装脚本${Font_color_suffix} by \033[1;35mCruz\033[0m
 更新时间 2022/08/22
  ———————————————————————
- ${Green_font_prefix} 0.更新 genesis ${Font_color_suffix}
+ ${Green_font_prefix} 0.更新 genesis 0.7.0 ${Font_color_suffix}
  ${Green_font_prefix} 1.安装 docker ${Font_color_suffix}
  ${Green_font_prefix} 2.安装 Sui ${Font_color_suffix}
  ${Green_font_prefix} 3.读取 Sui ${Font_color_suffix}
