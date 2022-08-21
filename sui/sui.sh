@@ -43,13 +43,13 @@ curl --location --request POST 'http://127.0.0.1:9000/' \
 
 update_genesis(){
 echo -e "${Green_font_prefix} 1. 进入 devnet 路径... ${Font_color_suffix}" && sleep 1
-sudo cd ~/sui-node/devnet
+cd ~/sui-node/devnet
 echo -e "${Green_font_prefix} 2. 关闭 docker 容器... ${Font_color_suffix}" && sleep 1
-sudo docker-compose down --volumes 
+docker-compose down --volumes 
 echo -e "${Green_font_prefix} 3. 更新 genesis 文件... ${Font_color_suffix}" && sleep 1
-sudo wget -O genesis.blob https://github.com/MystenLabs/sui-genesis/raw/main/devnet/genesis.blob
+wget -O genesis.blob https://github.com/MystenLabs/sui-genesis/raw/main/devnet/genesis.blob
 echo -e "${Green_font_prefix} 4. 重启 docker 容器... ${Font_color_suffix}" && sleep 1
-sudo docker-compose pull && sudo docker-compose up -d
+docker-compose pull && sudo docker-compose up -d
 echo -e "${Green_font_prefix} 5. 查看 sui 状态... ${Font_color_suffix}" && sleep 1
 read_sui
 }
