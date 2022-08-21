@@ -45,9 +45,9 @@ update_genesis(){
 echo "\e[1m\e[32m1. 进入 devnet 路径... \e[0m"
 sudo cd ~/sui-node/devnet
 echo "\e[1m\e[32m2. 关闭 docker 容器... \e[0m"
-docker-compose down --volumes 
+sudo docker-compose down --volumes 
 echo "\e[1m\e[32m3. 更新 genesis 文件... \e[0m"
-wget -O genesis.blob https://github.com/MystenLabs/sui-genesis/raw/main/devnet/genesis.blob
+sudo wget -O genesis.blob https://github.com/MystenLabs/sui-genesis/raw/main/devnet/genesis.blob
 echo "\e[1m\e[32m4. 重启 docker 容器... \e[0m"
 sudo docker-compose pull && sudo docker-compose up -d
 echo "\e[1m\e[32m5. 查看 sui 状态... \e[0m"
